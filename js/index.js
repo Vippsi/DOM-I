@@ -50,4 +50,95 @@ navTexts.pop()
 
 document.querySelectorAll('nav a').forEach((nav, idx)=> {
   nav.textContent = siteContent.nav[keys[idx]]
+ 
+  /*Task 3*/nav.style.color = 'green';
 })
+
+var newNav = document.querySelector('nav') 
+
+const newLinkProps = {
+  href: '#',
+  textContent: 'append',
+
+}
+const appendLink = document.createElement('a')
+
+appendLink.href = newLinkProps.href
+appendLink.textContent = newLinkProps.textContent
+
+newNav.appendChild(appendLink)
+
+
+
+const newLinkProps2 = {
+  href: '#',
+  textContent: 'prepend',
+}
+
+const prependLink = document.createElement('a')
+
+prependLink.href = newLinkProps2.href
+prependLink.textContent = newLinkProps2.textContent
+
+newNav.prepend(prependLink)
+
+
+//cta
+// h1
+const ctaKeys = Object.keys(siteContent.cta)
+let cta = document.querySelector('.cta');
+const ctaH1 = cta.firstElementChild.firstElementChild;
+ctaH1.textContent = siteContent.cta["h1"]
+//button
+const ctaButton = document.querySelector('button')
+ctaButton.textContent = siteContent.cta["button"]
+//img
+var mainImage = document.getElementById('cta-img')
+mainImage.setAttribute('src', siteContent['cta']['img-src'])
+
+
+
+var textCon = document.querySelectorAll('.text-content')
+
+
+textCon[0].firstElementChild.textContent = siteContent["main-content"]['features-h4']
+textCon[0].firstElementChild.nextSibling.textContent = siteContent["main-content"]["features-content"]
+
+textCon[1].firstElementChild.textContent = siteContent["main-content"]['about-h4']
+textCon[1].firstElementChild.nextSibling.textContent = siteContent["main-content"]["about-content"]
+
+
+textCon[2].firstElementChild.textContent = siteContent["main-content"]['services-h4']
+textCon[2].firstElementChild.nextSibling.textContent = siteContent["main-content"]["services-content"]
+
+textCon[3].firstElementChild.textContent = siteContent["main-content"]['product-h4']
+textCon[3].firstElementChild.nextSibling.textContent = siteContent["main-content"]["product-content"]
+
+textCon[4].firstElementChild.textContent = siteContent["main-content"]['vision-h4']
+textCon[4].firstElementChild.nextSibling.textContent = siteContent["main-content"]["vision-content"]
+
+var midImg = document.getElementById('middle-img')
+midImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
+
+
+
+
+//Contact
+const newKeys = Object.keys(siteContent.contact)
+
+var textContact = document.querySelector('.contact').children
+
+const contactArr = Array.from(textContact)
+
+
+contactArr.forEach((contact, idx) => {
+  contact.textContent = siteContent.contact[newKeys[idx]]
+})
+
+
+//Footer 
+
+document.querySelector('footer').firstElementChild.textContent = siteContent['footer']['copyright']
+
+
+
